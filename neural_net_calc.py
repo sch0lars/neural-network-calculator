@@ -92,17 +92,15 @@ def calculate(x, w1, w2, target_outputs, eta):
         for j in range(len(w2)):
             weight_change = w2_wc_values.pop(0)
             new_weight = w2[j][i] + weight_change
-            sign = '-' if weight_change < 0 else '+'
-            print(f'New W2_{i+1}{j+1}: {w2[j][i]:.3f} {sign} {weight_change:.3f} = {new_weight:.3f}')
+            print(f'New W2_{i+1}{j+1}: {w2[j][i]:.3f} + {weight_change:.3f} = {new_weight:.3f}')
             new_w2.append(new_weight)
     print()
     for i in range(len(w1[0])):
         for j in range(len(w1)):
             weight_change = w1_wc_values.pop(0)
             new_weight = w1[j][i] + weight_change
-            sign = '-' if weight_change < 0 else '+'
-            print(f'New W1_{i+1}{j+1}: {w1[j][i]:.3f} {sign} {weight_change:.3f} = {new_weight:.3f}')
+            print(f'New W1_{i+1}{j+1}: {w1[j][i]:.3f} + {weight_change:.3f} = {new_weight:.3f}')
             new_w1.append(new_weight)
 
     
-# calculate(x, w1, w2, target_outputs, 0.9)
+calculate(x, w1, w2, target_outputs, 0.9)
